@@ -37,6 +37,7 @@ defmodule IslandsEngine.Board do
     board = %{board | key => island}
     {:hit, forest_check(board, key), win_check(board), board}
   end
+
   defp guess_response(:miss, board), do: {:miss, :none, :no_win, board}
 
   defp forest_check(board, key) do
@@ -59,6 +60,6 @@ defmodule IslandsEngine.Board do
     end
   end
 
-  defp all_forested?(board), do:
-    Enum.all?(board, fn {_key, island} -> Island.forested?(island) end)
+  defp all_forested?(board),
+    do: Enum.all?(board, fn {_key, island} -> Island.forested?(island) end)
 end
