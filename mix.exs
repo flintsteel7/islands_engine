@@ -5,7 +5,7 @@ defmodule IslandsEngine.MixProject do
     [
       app: :islands_engine,
       version: "0.1.0",
-      elixir: "~> 1.7-dev",
+      elixir: "~> 1.6.5",
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
@@ -15,7 +15,7 @@ defmodule IslandsEngine.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {IslandsEngine.Application, []}
+      mod: {IslandsEngine.Assembly, []}
     ]
   end
 
